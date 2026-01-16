@@ -906,19 +906,7 @@ def main():
                     else:
                         st.error("Please enter the authorization code")
         
-        # JSON Configuration Upload
-        st.subheader("📄 Channel Configuration")
-        json_file = st.file_uploader("Upload JSON Configuration", type=['json'])
         
-        if json_file:
-            config = load_channel_config(json_file)
-            if config:
-                is_valid, message = validate_channel_config(config)
-                if is_valid:
-                    st.success("✅ Valid configuration loaded")
-                    st.session_state['channel_config'] = config
-                else:
-                    st.error(f"❌ Invalid configuration: {message}")
         
         # Log Management
         st.markdown("---")
